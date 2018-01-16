@@ -1,4 +1,4 @@
-# laravel-ebulksms
+# laravel-push-db
 
 ![Latest Version on Packagist][ico-version]
 ![Software License][ico-license]
