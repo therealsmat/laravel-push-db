@@ -5,15 +5,20 @@ return [
     /**
      * Your database name
      */
-    'DB_DATABASE'          => getenv('DB_DATABASE'),
+    'db_database'          => getenv('DB_DATABASE'),
 
     /**
      * Your database username
      */
-    'DB_USERNAME'            => getenv('DB_USERNAME'),
+    'db_username'            => getenv('DB_USERNAME'),
 
     /**
      * Your database password
      */
-    'DB_PASSWORD'            => getenv('DB_PASSWORD'),
+    'db_password'            => getenv('DB_PASSWORD'),
+
+    /**
+     * Path to store the exported database file
+     */
+    'output_path'            => storage_path('database.sql')
 ];
