@@ -22,6 +22,12 @@ class PushDbCommand extends Command
     protected $description = 'Export the specified database';
 
     /**
+     * Instance of the push db class
+     * @var
+     */
+    private $_db;
+
+    /**
      * Create a new command instance.
      *
      * @return void
@@ -29,6 +35,7 @@ class PushDbCommand extends Command
     public function __construct()
     {
         parent::__construct();
+        $this->_db = new PushDB();
     }
 
     /**
@@ -38,16 +45,18 @@ class PushDbCommand extends Command
      */
     public function handle()
     {
-        $db = new \therealsmat\PushDB\PushDB();
-
         try{
-            if ($db->export()) {
-                return 'Database Export Successful';
+            if ($this->_db->export()) {
+                $this->info('Database Export Successful');
+                return;
             }
-            return 'Database export not successful';
+            $this->error('Could not export database');
         } catch (ProcessFailedException $e)
         {
-            return $e->getMessage();
+            $this->error($e->getMessage());
+        } catch (\Exception $e)
+        {
+            $this->error($e->getMessage());
         }
     }
 }
