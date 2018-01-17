@@ -2,7 +2,7 @@
 
 ![Software License][ico-license]
 
-This package allows you to easily export your database. It also provides an [artisan](https://laravel.com/docs/5.5/artisan#generating-commands) command, `php artisan db:push` to make the process simpler. You can either run manaually from the console or use with Laravel scheduler. It's totally a matter of choice.
+This package allows you to easily export your database. It also provides an [artisan](https://laravel.com/docs/5.5/artisan#generating-commands) command, `php artisan db:push` to make the process simpler. You can either run manually from the console or use with Laravel scheduler. It's totally a matter of choice.
 
 
 ## Requirements
