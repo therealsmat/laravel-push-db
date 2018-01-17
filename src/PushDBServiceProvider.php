@@ -20,11 +20,17 @@ class PushDBServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $config = realpath(__DIR__.'/config/config.php');
+        $config = realpath(__DIR__ . '/../config/config.php');
 
         $this->publishes([
             $config => config_path('pushdb.php')
         ]);
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                PushDbCommand::class
+            ]);
+        }
     }
 
     /**
