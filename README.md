@@ -6,7 +6,7 @@ This package allows you to easily export your database. It also provides an [art
 
 
 ## Requirements
-[PHP](https://php.net) 5.4 or greater, [Composer](https://getcomposer.org) are required.
+[PHP](https://php.net) 5.4+, [Composer](https://getcomposer.org) are required.
 
 ## Installation
 Run `composer require therealsmat/laravel-push-db` to pull the latest version of the package
