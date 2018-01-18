@@ -13,7 +13,9 @@ Run `composer require therealsmat/laravel-push-db` to pull the latest version of
 
 ## Configuration
 To start using laravel-push-db, add `therealsmat\PushDB\PushDBServiceProvider::class` to the providers array of your `app.php` file.
+
 Next, publish the PushDB Service provider by running `php artisan vendor:publish --provider="therealsmat\PushDB\PushDBServiceProvider"`. 
+
 You will get a config file named `pushdb.php`. Feel free to edit it if you wish.
 
 Also out of the box, you will get a new artisan command `db:push`. This command alone will get your database exported quickly.
