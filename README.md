@@ -64,6 +64,9 @@ Of course, you must have set up your s3 disk from the `filesystems.php` file.
 $schedule->command('db:push --force')->daily();
 ```
 
+## Supported Databases
+Only mysql database is supported for now!
+
 ## TODO
 * Implement push to cloud storage feature e.g push to Dropbox, google drive e.t.c.
 * Check that the config values are present before sending into the `process` method.
