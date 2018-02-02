@@ -18,7 +18,12 @@ return [
     'db_password'            => getenv('DB_PASSWORD'),
 
     /**
+     * Directory to save backups
+     */
+    'storage_directory'      => 'backups',
+
+    /**
      * Path to store the exported database file
      */
-    'output_path'            => storage_path('database.sql')
+    'file_name'            => 'database.sql'
 ];
