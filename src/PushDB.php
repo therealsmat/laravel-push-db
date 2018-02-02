@@ -2,6 +2,7 @@
 
 namespace therealsmat\PushDB;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -9,6 +10,8 @@ use Symfony\Component\Process\Process;
 
 class PushDB
 {
+    use Notifiable;
+
     /**
      * Your database name
      * @var
@@ -111,6 +114,15 @@ class PushDB
     public function backups()
     {
         return Storage::files($this->directory);
+    }
+
+    /**
+     * Send me a notification
+     * @param $mailClass
+     */
+    public function notifyMe($mailClass)
+    {
+        $this->notify($mailClass);
     }
 
 }
