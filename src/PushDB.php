@@ -87,7 +87,7 @@ class PushDB
         $command = "mysqldump --opt --user=". $this->db_username
                                 ." --password=". $this->db_password
                                 . " ".$this->db_name ." > "
-                                . storage_path($this->getFileName());
+                                . $this->getFileName();
 
         return $command;
     }
@@ -98,11 +98,10 @@ class PushDB
      */
     private function getFileName()
     {
-        $dir = storage_path('app/'.$this->directory);
-        if (!is_dir($dir)) {
+        if (!Storage::exists($this->directory)) {
             Storage::makeDirectory($this->directory);
         }
-        return 'app/'.$this->directory.'/'.date('Y-m-d_h:i:s_').$this->file_name;
+        return storage_path('app/'.$this->directory.'/'.date('Y-m-d_h:i:s_').$this->file_name);
     }
 
     /**
