@@ -116,13 +116,4 @@ class PushDB
         return Storage::files($this->directory);
     }
 
-    /**
-     * Send me a notification
-     * @param $mailClass
-     */
-    public function notifyMe($mailClass)
-    {
-        $this->notify($mailClass);
-    }
-
 }
